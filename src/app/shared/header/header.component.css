@@ -1,0 +1,65 @@
+.header {
+    width: auto;
+    height: 50px;
+    background-color:#FFCB05;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    overflow: hidden;
+  }
+  
+  .logoPokemon {
+    width: 4vw;
+  }
+
+  .menu {
+    overflow: hidden;
+  }
+  
+  .menu a {
+    float: left;
+    display: block;
+    color: #1E1E1F;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+  }
+  
+  
+  .menu a:hover {
+      border-bottom: 5px solid #1E1E1F;
+  }
+  
+  .exit {
+    background-color: #FFCB05;
+    width: 4vw;
+    padding: 0.3em;
+    border: 1px solid #4B4B4F;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+
+
+  }
+
+  .exit :hover{
+    cursor: pointer;
+  }
+  
+  p {
+   
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 300;
+  }
+  mat-icon{
+  
+    margin-top: 4px;
+    font-size: 20px;
+  }

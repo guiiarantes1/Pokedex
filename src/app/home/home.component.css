@@ -1,56 +1,32 @@
-.header {
-    width: auto;
-    height: 5vh;
-    background-color:#FFCB05;
+.contain {
+    width: 100%;
+    height: 100%;
+    margin-top: 4vh;
+    align-items: flex-start;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 10vw;
-    padding-right: 10vw;
-    overflow: hidden;
-  }
-  
-  .logoPokemon {
-    width: 4vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    
   }
 
-  .menu {
-    overflow: hidden;
+  button{
+  margin-left: 0.5vw;
+  width: 7.5vw;
+  height: 4vh;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  border-width: 1px;
   }
+
   
-  .menu a {
-    float: left;
-    display: block;
-    color: #1E1E1F;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 12px;
-    border-bottom: 3px solid transparent;
-    cursor: pointer;
-  }
-  
-  
-  .menu a:hover {
-    border-bottom: 3px solid #1E1E1F;
-  }
-  
-  .exit {
+  button:hover{
     background-color: #FFCB05;
-    width: 5vw;
-    padding: 0.3em;
-    border: 1px solid #4B4B4F;
-    box-sizing: border-box;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .exit :hover{
+    width: 7.5vw;
+    margin-left: 0.5vw;
     cursor: pointer;
-  }
-  
-  p {
-    font-size: 12px;
-    font-weight: 300;
+    font-size: 13.5px;
+    text-decoration: underline;
   }

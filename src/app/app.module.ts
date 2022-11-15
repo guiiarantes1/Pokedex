@@ -7,13 +7,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-
+import { FavoritosComponent } from './favoritos/favoritos.component';
+import { PesquisaComponent } from './pesquisa/pesquisa.component';
+import { HeaderComponent } from './shared/header/header.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
+    FavoritosComponent,
+    PesquisaComponent,
+    HeaderComponent,
+
 
   ],
   imports: [
@@ -22,6 +29,7 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
