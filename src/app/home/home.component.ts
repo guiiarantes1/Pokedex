@@ -9,14 +9,19 @@ import { PokemonService } from '../services/pokemon.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  pokemons: Pokemon[] = []
-  pokemon:any = Pokemon;
+  numero!:number;
 
 
   constructor(private router: Router, public pokemonService: PokemonService) { }
 
 
   ngOnInit(): void {
+  }
+
+  pegarImagem(index:any){
+    index!;
+
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index+1}.png`
   }
 
 

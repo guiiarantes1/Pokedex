@@ -20,15 +20,15 @@
         </div>
     </div>
 
-    <div class="listaCards">
-        <div class="card">
-            <div class="imagemPokemon">
-                <img src="../../assets/images/pikachu.svg">
-            </div>
+    <div class="listaCards"*ngFor="let pokemon of pokemonService.pokemons; index as i">
+        <div class="card">        
 
-            <div class="detalhes" *ngFor="let pokemon of pokemonService.pokemons;">
-                <p class="nomePokemon">{{pokemon}}</p>
-                <p class="idPokemon">ID:101</p>
+            <div class="detalhes" >
+                <div class="imagemPokemon">
+                    <img [src]=pegarImagem(i)>
+                </div>
+                <p class="nomePokemon">{{pokemon.name}}</p>
+                <p class="idPokemon">ID: {{i+1}}</p>
 
                 <div class="types">
                     <div>
