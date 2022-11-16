@@ -37,7 +37,11 @@ img {
 }
 
 .inputForm{
-    text-align: center;
+    text-align: center; 
+}
+
+input::placeholder{
+    font-size: 13px;
 }
 button{
     margin-top: 25px;
@@ -61,7 +65,8 @@ input{
     border-width: 1px;
     border-style: solid;
     border-radius: 4px;
-    height: 4vh;
+    height: 3vh;
+    padding: 10px;
 }
 
 form{

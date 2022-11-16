@@ -11,6 +11,9 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { HeaderComponent } from './shared/header/header.component';
 import {MatIconModule} from '@angular/material/icon';
+import { ModalLoginComponent } from './modals/modal-login/modal-login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PokemonService } from './services/pokemon.service';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import {MatIconModule} from '@angular/material/icon';
     FavoritosComponent,
     PesquisaComponent,
     HeaderComponent,
+    ModalLoginComponent,
 
 
   ],
@@ -29,9 +33,10 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PokemonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

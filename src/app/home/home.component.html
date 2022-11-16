@@ -9,15 +9,38 @@
                 Fire
             </button>
             <button>
-                Electric
+                Eletric
             </button>
             <button>
                 Water
             </button>
             <button>
-                Earth
+                Grass
             </button>
         </div>
     </div>
 
-     
+    <div class="listaCards">
+        <div class="card">
+            <div class="imagemPokemon">
+                <img src="../../assets/images/pikachu.svg">
+            </div>
+
+            <div class="detalhes" *ngFor="let pokemon of pokemonService.pokemons;">
+                <p class="nomePokemon">{{pokemon}}</p>
+                <p class="idPokemon">ID:101</p>
+
+                <div class="types">
+                    <div>
+                        <span>Eletric</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="verDetalhes">
+                <button class="botaoVer">
+                    <p class="textButton">Ver Detalhes</p>
+                </button>
+            </div>
+        </div>
+    </div>

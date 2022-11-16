@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Pokemon } from '../model/pokemon-model';
+import { PokemonService } from '../services/pokemon.service';
 
 @Component({
   selector: 'app-home',
@@ -9,19 +10,15 @@ import { Pokemon } from '../model/pokemon-model';
 })
 export class HomeComponent implements OnInit {
   pokemons: Pokemon[] = []
+  pokemon:any = Pokemon;
 
-  constructor(private router: Router) { }
+
+  constructor(private router: Router, public pokemonService: PokemonService) { }
 
 
   ngOnInit(): void {
   }
 
-  home() {
-    this.router.navigate(['/home'])
-  }
 
-  favoritos() {
-    this.router.navigate(['/favoritos'])
-  }
 
 }
