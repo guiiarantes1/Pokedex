@@ -27,12 +27,12 @@
                 <div class="imagemPokemon">
                     <img [src]=pegarImagem(i)>
                 </div>
-                <p class="nomePokemon">{{pokemon.name}}</p>
-                <p class="idPokemon">ID: {{i+1}}</p>
+                <p class="nomePokemon">{{pokemon.name |uppercase}}</p>
+                <p class="idPokemon">ID: #{{i+1}}</p>
 
-                <div class="types">
+                <div class="types" *ngFor="let type of pokemon.types; index as i">
                     <div>
-                        <span>Eletric</span>
+                        <span>{{type.type.name}}</span>
                     </div>
                 </div>
 

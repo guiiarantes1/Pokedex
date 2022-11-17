@@ -6,18 +6,31 @@ import { Injectable } from '@angular/core';
 })
 export class PokemonService {
   pokemons:any = [];
+  
   constructor(private httpClient: HttpClient) {
     this.carregarPokemons();
    }
   async carregarPokemons() {
    const requisicao = await this.httpClient
-   .get<any>('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0')
+   .get<any>('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0')
+   .toPromise();
+   const nomePokemons = requisicao.results.map((pokemon:any) => pokemon.name);
+   const resultado = await Promise.all(nomePokemons.map((nomePokemon:string) => this.pegarDetalhes(nomePokemon)))
+   this.pokemons = resultado;
+   
+
+   console.log(resultado)   
+   
+  }
+
+
+  async pegarDetalhes(name:string){
+    const retorno = await this.httpClient
+   .get<any>(`https://pokeapi.co/api/v2/pokemon/${name}/`)
    .toPromise();
 
-   this.pokemons = requisicao.results;
-   
+  return retorno;
 
-   console.log(this.pokemons)
-   
+  
   }
 }
