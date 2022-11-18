@@ -18,6 +18,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
 import { PokemonModalComponent } from './modals/pokemon-modal/pokemon-modal.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { CommonModule } from '@angular/common';
+import {MatSelectModule} from '@angular/material/select';
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -42,7 +45,10 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     HttpClientModule,
     MatPaginatorModule,
     MatDialogModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    CommonModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [PokemonService, HomeComponent],
   bootstrap: [AppComponent]

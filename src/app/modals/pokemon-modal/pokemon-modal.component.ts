@@ -29,10 +29,7 @@ pokemon!:any;
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${index+1}.png`
   }
 
-  setCurrentPokemon(pokemon:any){
-    this.pokemon = pokemon;
-  }
-  
+
   
   
 }

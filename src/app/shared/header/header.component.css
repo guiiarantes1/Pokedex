@@ -1,7 +1,8 @@
 .header {
     width: auto;
     height: 50px;
-    background-color:#FFCB05;
+    background: rgb(255,203,5);
+    background: linear-gradient(94deg, rgba(255,203,5,1) 10%, rgba(5,165,255,1) 30%, rgba(125,193,254,1) 50%, rgba(5,165,255,1) 70%, rgba(255,203,5,1) 90%);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,26 +14,29 @@
   .logoPokemon {
     width: 5vw;
   }
-
-  .menu {
-    overflow: hidden;
+  .pokemonsImagem{
+    display: flex;
+    width: 4vw;
+    margin-left: 300px;
   }
-  
+
   .menu a {
     float: left;
     display: block;
-    color: #1E1E1F;
+    color: #000000;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
-    font-size: 14px;
+    text-decoration:dashed;
+    font-size: 19px;
     border-bottom: 3px solid transparent;
     cursor: pointer;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: rgb(106, 183, 255);
   }
   
   
   .menu a:hover {
-      border-bottom: 5px solid #1E1E1F;
+      border-bottom: 5px solid #ffdb39;
   }
   
   .exit {

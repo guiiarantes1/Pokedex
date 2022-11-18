@@ -18,8 +18,8 @@
     
     </div>
     <div class="types" *ngFor="let type of pokemon.types;" >
-        <div class={{type.type.name}} >
-            <span>{{type.type.name}}</span>
+        <div class={{type.type.name}}    >
+            <span class="type">{{type.type.name | titlecase}}</span>
         </div>
     </div>
 
