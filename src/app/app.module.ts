@@ -14,6 +14,11 @@ import {MatIconModule} from '@angular/material/icon';
 import { ModalLoginComponent } from './modals/modal-login/modal-login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonService } from './services/pokemon.service';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
+import { PokemonModalComponent } from './modals/pokemon-modal/pokemon-modal.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +29,7 @@ import { PokemonService } from './services/pokemon.service';
     PesquisaComponent,
     HeaderComponent,
     ModalLoginComponent,
-
+    PokemonModalComponent
 
   ],
   imports: [
@@ -34,9 +39,12 @@ import { PokemonService } from './services/pokemon.service';
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule,
+    MatDialogModule,
+    MatProgressBarModule
   ],
-  providers: [PokemonService],
+  providers: [PokemonService, HomeComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

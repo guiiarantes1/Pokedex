@@ -20,25 +20,27 @@
         </div>
     </div>
 
-    <div class="listaCards"*ngFor="let pokemon of pokemonService.pokemons; index as i">
-        <div class="card">        
 
-            <div class="detalhes" >
+
+    <div class="listaCards">
+        <div class="card" *ngFor="let pokemon of pokemonService.pokemons; index as i">
+
+            <div class="detalhes">
                 <div class="imagemPokemon">
                     <img [src]=pegarImagem(i)>
                 </div>
+
                 <p class="nomePokemon">{{pokemon.name |uppercase}}</p>
-                <p class="idPokemon">ID: #{{i+1}}</p>
-
-                <div class="types" *ngFor="let type of pokemon.types; index as i">
-                    <div>
-                        <span>{{type.type.name}}</span>
-                    </div>
+                <p class="idPokemon">ID: #{{i+1}}</p>     
+            
+            </div>
+            <div class="types" *ngFor="let type of pokemon.types;" >
+                <div class={{type.type.name}} >
+                    <span>{{type.type.name}}</span>
                 </div>
-
             </div>
             <div class="verDetalhes">
-                <button class="botaoVer">
+                <button class="botaoVer" (click)="openDialog(i)">
                     <p class="textButton">Ver Detalhes</p>
                 </button>
             </div>

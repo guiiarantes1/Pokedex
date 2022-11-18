@@ -8,3 +8,109 @@
 body {
     background-color: rgb(248, 250, 252);
 }
+
+.normal {
+    background-color: gray;
+    height: 25px;
+}
+
+.fighting {
+    background-color: rgb(161, 105, 0);
+    height: 25px;
+}
+
+.flying {
+    color:rgb(219, 219, 219);
+    background: rgb(8,153,241);
+    background: linear-gradient(180deg, rgba(8,153,241,1) 0%, rgba(55,55,55,1) 72%);
+    height: 25px;
+}
+
+.poison {
+    background-color: rgb(201, 25, 255);
+    height: 25px;
+}
+
+.ground {
+    background: rgb(255,209,0);
+    background: linear-gradient(180deg, rgba(255,209,0,1) 0%, rgba(112,77,0,1) 70%);
+    height: 25px;
+}
+
+.rock {
+    background-color: rgb(139, 130, 0);
+    height: 25px;
+}
+
+.bug {
+    background-color: rgba(16, 138, 12, 0.842);
+    height: 25px;
+}
+
+.ghost {
+    background-color: rgb(82, 0, 107);
+    height: 25px;
+}
+
+.steel {
+    background-color: rgb(92, 104, 156);
+    height: 25px;
+}
+
+.fire {
+    background-color: rgb(255, 139, 31);
+    height: 25px;
+}
+
+.water {
+    color: rgb(255, 255, 255);
+    background-color: rgb(73, 115, 255);
+    height: 25px;
+}
+
+.grass {
+    background-color: rgb(16, 180, 25);
+    height: 25px;
+}
+
+.electric {
+    background-color: #FFCB05;
+    height: 25px;
+}
+
+.psychic {
+    background-color: rgb(253, 92, 245);
+    height: 25px;
+}
+
+.ice {
+    background-color: rgb(133, 202, 248);
+    height: 25px;
+}
+
+.dragon {
+    background: rgb(1,82,167);
+    background: linear-gradient(180deg, rgba(1,82,167,1) 0%, rgba(223,149,0,1) 84%);
+    height: 25px;
+}
+
+.dark {
+    background-color: rgb(88, 88, 88);
+    height: 25px;
+}
+
+.fairy {
+    background-color: rgb(255, 95, 242);
+    height: 25px;
+}
+
+
+.unknown {
+    background-color: rgb(141, 141, 141);
+    height: 25px;
+}
+
+.shadow {
+    background-color: rgb(120, 0, 156);
+    height: 25px;
+}
