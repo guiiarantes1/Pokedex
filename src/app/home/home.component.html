@@ -27,11 +27,11 @@
       >
         <div class="detalhes">
           <div class="imagemPokemon">
-            <img [src]="pegarImagem(i)" />
+            <img [src]="pegarImagem(pokemon.id)" />
           </div>
 
           <p class="nomePokemon">{{ pokemon.name | uppercase }}</p>
-          <p class="idPokemon">ID: #{{ i + 1 }}</p>
+          <p class="idPokemon">ID: #{{ pokemon.id}}</p>
         </div>
         <div class="types" *ngFor="let type of pokemon.types">
           <div class="{{ type.type.name }}">
@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="verDetalhes">
-          <button class="botaoVer" (click)="openDialog(i)">
+          <button class="botaoVer" (click)="openDialog(pokemon.id)">
             <p class="textButton">Ver Detalhes</p>
           </button>
         </div>
@@ -50,6 +50,7 @@
         previousLabel=""
         nextLabel=""
         (pageChange)="changePage($event)"
+
       ></pagination-controls>
     </div>
   </div>

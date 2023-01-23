@@ -10,6 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class PokemonService {
   pokemons:any = [];
   selectedPokemon!:any;
+  offset = 0;
 
   constructor(private httpClient: HttpClient,  public dialog:MatDialog) {
     this.carregarPokemons();
@@ -26,7 +27,7 @@ export class PokemonService {
 
   async carregarPokemons() {
    const requisicao = await this.httpClient
-   .get<any>('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0')
+   .get<any>('https://pokeapi.co/api/v2/pokemon?limit=151&offset=' + this.offset)
    .toPromise();
    const nomePokemons = requisicao.results.map((pokemon:any) => pokemon.name);
    const resultado = await Promise.all(nomePokemons.map((nomePokemon:string) => this.pegarDetalhes(nomePokemon)))

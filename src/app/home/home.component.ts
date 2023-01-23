@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   nomePokemon:any;
   detalhesPokemons!: any[];
 
+
   constructor(private router: Router, public pokemonService: PokemonService, private httpClient: HttpClient, public dialog:MatDialog) { }
 
 

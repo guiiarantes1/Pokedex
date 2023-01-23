@@ -65,7 +65,7 @@
   background-color: #ffffff9a;
   border: 2px;
   border-style: ridge;
-  padding: 5px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
 }
