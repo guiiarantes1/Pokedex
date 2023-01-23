@@ -11,6 +11,7 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { HeaderComponent } from './shared/header/header.component';
 import {MatIconModule} from '@angular/material/icon';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ModalLoginComponent } from './modals/modal-login/modal-login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonService } from './services/pokemon.service';
@@ -48,7 +49,8 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
     MatProgressBarModule,
     CommonModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    NgxPaginationModule
   ],
   providers: [PokemonService, HomeComponent],
   bootstrap: [AppComponent]

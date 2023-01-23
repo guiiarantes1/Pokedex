@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { PokemonModalComponent } from '../modals/pokemon-modal/pokemon-modal.component';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -9,10 +10,20 @@ import { MatDialog } from '@angular/material/dialog';
 export class PokemonService {
   pokemons:any = [];
   selectedPokemon!:any;
-  
+
   constructor(private httpClient: HttpClient,  public dialog:MatDialog) {
     this.carregarPokemons();
    }
+
+  //  carregarPokemons(): Observable<any>{
+  //   return this.httpClient.get('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0');
+
+  // }
+
+  // pegarDetalhes(name:string): Observable<any>{
+  //   return this.httpClient.get('https://pokeapi.co/api/v2/pokemon/${name}/');
+  // }
+
   async carregarPokemons() {
    const requisicao = await this.httpClient
    .get<any>('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0')
@@ -20,10 +31,10 @@ export class PokemonService {
    const nomePokemons = requisicao.results.map((pokemon:any) => pokemon.name);
    const resultado = await Promise.all(nomePokemons.map((nomePokemon:string) => this.pegarDetalhes(nomePokemon)))
    this.pokemons = resultado;
-   
 
-   console.log(resultado)   
-   
+
+   console.log(resultado)
+
   }
 
 
@@ -32,7 +43,7 @@ export class PokemonService {
    .get<any>(`https://pokeapi.co/api/v2/pokemon/${name}/`)
    .toPromise();
 
-  return retorno;  
+  return retorno;
   }
 
   public openDialog(index:any){
@@ -41,5 +52,5 @@ export class PokemonService {
     this.selectedPokemon = this.pokemons[index];
     console.log(this.selectedPokemon)
   }
-  
+
 }

@@ -12,13 +12,27 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class HomeComponent implements OnInit {
   selectedPokemon!:any;
+  pokemons!: any[];
   teste!:any;
+  p: number = 1;
+  nomePokemon:any;
+  detalhesPokemons!: any[];
 
   constructor(private router: Router, public pokemonService: PokemonService, private httpClient: HttpClient, public dialog:MatDialog) { }
 
 
   ngOnInit(): void {
-    
+    // this.pokemonService.carregarPokemons().subscribe((response: any) => {
+    //   console.log(response);
+    //   this.pokemons = response.results;
+
+    // });
+
+    // this.pokemonService.pegarDetalhes().subscribe((response: any) => {
+    //   console.log(response);
+    //   this.pokemons = response.results;
+    // });
+
   }
 
   pegarImagem(index:any){
@@ -27,6 +41,11 @@ export class HomeComponent implements OnInit {
 
 public openDialog(index:any){
   return this.pokemonService.openDialog(index)
+}
+
+changePage(event: any) {
+  this.p = event;
+
 }
 
 }

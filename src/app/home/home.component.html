@@ -1,52 +1,56 @@
 <div class="background">
-
-
-    <div class="contain">
-
-        <div class="filterGroup">
-            <div class="filterItem">
-                <button>
-                    Todos
-                </button>
-                <button>
-                    Fire
-                </button>
-                <button>
-                    Eletric
-                </button>
-                <button>
-                    Water
-                </button>
-                <button>
-                    Grass
-                </button>
-            </div>
-        </div>
-
-
-
-        <div class="listaCards">
-            <div class="card" *ngFor="let pokemon of pokemonService.pokemons; index as i">
-
-                <div class="detalhes">
-                    <div class="imagemPokemon">
-                        <img [src]=pegarImagem(i)>
-                    </div>
-
-                    <p class="nomePokemon">{{pokemon.name |uppercase}}</p>
-                    <p class="idPokemon">ID: #{{i+1}}</p>
-
-                </div>
-                <div class="types" *ngFor="let type of pokemon.types;">
-                    <div class={{type.type.name}}>
-                        <span class="type">{{type.type.name | titlecase}}</span>
-                    </div>
-                </div>
-                <div class="verDetalhes">
-                    <button class="botaoVer" (click)="openDialog(i)">
-                        <p class="textButton">Ver Detalhes</p>
-                    </button>
-                </div>
-            </div>
-        </div>
+  <div class="contain">
+    <div class="filterGroup">
+      <div class="filterItem">
+        <button>Todos</button>
+        <button>Fire</button>
+        <button>Eletric</button>
+        <button>Water</button>
+        <button>Grass</button>
+        <button>Normal</button>
+      </div>
     </div>
+
+    <div class="listaCards">
+      <div
+        class="card"
+        *ngFor="
+          let pokemon of pokemonService.pokemons
+            | paginate
+              : {
+                  itemsPerPage: 20,
+                  currentPage: p,
+                  totalItems: 151
+                };
+          index as i
+        "
+      >
+        <div class="detalhes">
+          <div class="imagemPokemon">
+            <img [src]="pegarImagem(i)" />
+          </div>
+
+          <p class="nomePokemon">{{ pokemon.name | uppercase }}</p>
+          <p class="idPokemon">ID: #{{ i + 1 }}</p>
+        </div>
+        <div class="types" *ngFor="let type of pokemon.types">
+          <div class="{{ type.type.name }}">
+            <span class="type">{{ type.type.name | titlecase }}</span>
+          </div>
+        </div>
+        <div class="verDetalhes">
+          <button class="botaoVer" (click)="openDialog(i)">
+            <p class="textButton">Ver Detalhes</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="pagination">
+      <pagination-controls
+        previousLabel=""
+        nextLabel=""
+        (pageChange)="changePage($event)"
+      ></pagination-controls>
+    </div>
+  </div>
+</div>

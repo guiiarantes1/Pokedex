@@ -52,6 +52,7 @@ body {
 }
 
 .ghost {
+    color: white;
     background-color: rgb(82, 0, 107);
     height: 25px;
 }
