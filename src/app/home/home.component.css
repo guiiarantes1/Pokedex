@@ -11,6 +11,13 @@
 .filterGroup {
   display: flex;
   padding: 10px 0;
+  justify-content: center;
+  align-items: center;
+}
+.filterItem{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .filterItem > button {
   width: 90px;
@@ -160,9 +167,21 @@
     margin-top: 10px;
     padding: 5px;
   }
+  .filterGroup{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center !important;
+    align-items: center !important;
+  }
 }
 
 @media (min-width: 400px) and (max-width: 475px) {
+  .filterGroup{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center !important;
+    align-items: center !important;
+  }
   .contain{
     width: 100%;
   }

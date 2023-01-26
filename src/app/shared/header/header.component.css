@@ -80,11 +80,13 @@
       display: none;
     }
     .logo{
-      width: 60% !important;
+      width: 40% !important;
+
+
     }
 
     .menuResponsivo{
-      background-color: #ffcd058f !important;
+      background-color: #ffffffe3 !important;
       display: flex !important;
       background-color: transparent;
       border: 1px;
