@@ -3,11 +3,11 @@
     <div class="filterGroup">
       <div class="filterItem">
         <button>Todos</button>
-        <button>Fire</button>
-        <button>Eletric</button>
-        <button>Water</button>
-        <button>Grass</button>
-        <button>Normal</button>
+        <button (click)="pokemonsForType('fire')">Fire</button>
+        <button (click)="pokemonsForType('electric')">Eletric</button>
+        <button (click)="pokemonsForType('water')">Water</button>
+        <button (click)="pokemonsForType('grass')">Grass</button>
+        <button (click)="pokemonsForType('normal')" >Normal</button>
       </div>
     </div>
 
@@ -20,7 +20,7 @@
               : {
                   itemsPerPage: 20,
                   currentPage: p,
-                  totalItems: 151
+                  totalItems: 1279
                 };
           index as i
         "

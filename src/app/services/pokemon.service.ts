@@ -17,7 +17,7 @@ export class PokemonService {
    }
 
    getPokemons(): Observable<any>{
-    return this.httpClient.get('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0');
+    return this.httpClient.get('https://pokeapi.co/api/v2/pokemon?limit=1279&offset=0');
 
   }
 
@@ -27,7 +27,7 @@ export class PokemonService {
 
   async carregarPokemons() {
    const requisicao = await this.httpClient
-   .get<any>('https://pokeapi.co/api/v2/pokemon?limit=151&offset=' + this.offset)
+   .get<any>('https://pokeapi.co/api/v2/pokemon?limit=1279&offset=' + this.offset)
    .toPromise();
    const nomePokemons = requisicao.results.map((pokemon:any) => pokemon.name);
    const resultado = await Promise.all(nomePokemons.map((nomePokemon:string) => this.pegarDetalhes(nomePokemon)))
@@ -54,6 +54,10 @@ export class PokemonService {
     console.log(index)
     this.selectedPokemon = this.pokemons[index];
     console.log(this.selectedPokemon)
+  }
+
+  getPokemonForType(name:string):Observable<any>{
+    return this.httpClient.get(`https://pokeapi.co/api/v2/type/${name}/`)
   }
 
 }

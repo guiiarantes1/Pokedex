@@ -29,11 +29,11 @@ export class HomeComponent implements OnInit {
 
   // localStorage.clear()
     this.favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
-    console.log(this.favoritos);
+;
     this.pokemonService.carregarPokemons();
 
     this.pokemonService.getPokemons().subscribe((response: any) => {
-      // console.log(response);
+      console.log(response);
       this.pokemons = response.results;
     });
 
@@ -75,15 +75,24 @@ export class HomeComponent implements OnInit {
       localStorage.setItem('favoritos', JSON.stringify(this.favoritos));
       this.pokemonsFavoritos = this.favoritos;
 
-      console.log(this.favoritos);
-      console.log(nome);
+
 
       if (this.favoritos.includes(nome)) {
-        console.log(this.favoritos);
+
         this.favoritos = this.favoritos.filter(e => e !== nome);
-        console.log(this.favoritos);
+
     }
     });
 
   }
+
+  pokemonsForType(name:string){
+    this.pokemonService.getPokemonForType(name).subscribe((response:any) =>
+    console.log(response.pokemon)
+
+    );
+
+
+  }
+
 }
