@@ -1,0 +1,98 @@
+.listaCards {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.card {
+  width: 200px;
+  height: 280px;
+  border-radius: 5px;
+  background: rgb(255, 253, 167);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 253, 167, 1) 45%,
+    rgba(195, 229, 245, 1) 61%,
+    rgba(89, 144, 255, 1) 99%
+  );
+  padding: 20px;
+  box-shadow: 0 5px 9px rgb(0 0 0 / 30%);
+  border: 1px solid rgba(var(--lightGrey), 1);
+}
+
+.imagemPokemon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detalhes {
+  background-color: #ffffff9a;
+  border: 2px;
+  border-style: ridge;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nomePokemon {
+  font-weight: 500;
+  margin-bottom: -3px;
+}
+.idPokemon {
+  color: #7d7e80;
+  margin-bottom: -3px;
+}
+
+.types {
+  margin: 15px 15px 0 0;
+  display: inline-block;
+  border-radius: 30px;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 70px;
+}
+
+.type {
+  display: flex;
+  margin: 3px auto 0 auto;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 0.5vw;
+  width: fit-content;
+  font-size: 0.8rem;
+}
+
+.verDetalhes {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.botaoVer {
+  padding: 0;
+  margin: auto;
+  background-color: #ffcb05;
+  border: none;
+  border-radius: 30px;
+  width: 150px;
+}
+
+.botaoVer:hover {
+  cursor: pointer;
+}
+
+.textButton {
+  font-size: 0.8rem;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.pagination {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+

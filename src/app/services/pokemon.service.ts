@@ -32,12 +32,14 @@ export class PokemonService {
    const nomePokemons = requisicao.results.map((pokemon:any) => pokemon.name);
    const resultado = await Promise.all(nomePokemons.map((nomePokemon:string) => this.pegarDetalhes(nomePokemon)))
    this.pokemons = resultado;
-
-
-   console.log(resultado)
+  //  console.log(resultado)
 
   }
 
+  getDetails(name:string):Observable<any>{
+    return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${name}/`);
+
+   }
 
   async pegarDetalhes(name:string){
     const retorno = await this.httpClient

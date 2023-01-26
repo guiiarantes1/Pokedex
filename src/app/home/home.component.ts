@@ -8,26 +8,34 @@ import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
   pokemons!: any[];
-  teste!:any;
+  teste!: any;
   p: number = 1;
   pokemonsFogo!: any[];
-  favoritos!:any[];
-  listaPokemons!:any[]
+  favoritos!: any[];
+  listaPokemons!: any[];
+  pokemonsFavoritos!: any[];
 
-
-  constructor(private router: Router, public pokemonService: PokemonService, private httpClient: HttpClient, public dialog:MatDialog) { }
-
+  constructor(
+    private router: Router,
+    public pokemonService: PokemonService,
+    private httpClient: HttpClient,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
+  // localStorage.clear()
+    this.favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
+    console.log(this.favoritos);
+    console.log(localStorage);
+    console.log(this.pokemonsFavoritos);
     this.pokemonService.carregarPokemons();
 
-
     this.pokemonService.getPokemons().subscribe((response: any) => {
-      console.log(response);
+      // console.log(response);
       this.pokemons = response.results;
     });
 
@@ -35,30 +43,46 @@ export class HomeComponent implements OnInit {
     //   console.log(response);
     //   this.pokemons = response.results;
     // });
-
   }
 
-  pegarImagem(index:any){
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`
+  pegarImagem(index: any) {
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`;
   }
 
-public openDialog(index:any){
-  return this.pokemonService.openDialog(index)
+  public openDialog(index: any) {
+    return this.pokemonService.openDialog(index);
+  }
+
+  changePage(event: any) {
+    this.p = event;
+  }
+
+  // filtrarFogo(){
+  //   this.pokemonsFogo = this.pokemons.filter((filtro:any) =>
+  //   this.pokemons.genre)
+  // }
+
+  favoritar(nome: any) {
+    // this.favoritos.push(nome)
+
+    // Pega a lista já cadastrada, se não houver vira um array vazio
+    this.favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
+    // Adiciona pessoa ao cadastro
+    //this.favoritos.push(nome);
+
+    // Salva a lista alterada
+    // localStorage.setItem("favoritos", JSON.stringify(this.favoritos));
+    this.pokemonService.getDetails(nome).subscribe((response: any) => {
+      this.favoritos.push(response);
+      localStorage.setItem('favoritos', JSON.stringify(this.favoritos));
+      this.pokemonsFavoritos = this.favoritos;
+      console.log(this.favoritos);
+      console.log(localStorage);
+      console.log(this.pokemonsFavoritos);
+    });
+
+    if (this.favoritos.includes(nome)) {
+      this.pokemonsFavoritos = this.pokemonsFavoritos.filter((e) => e !== nome);
+    }
+  }
 }
-
-changePage(event: any) {
-  this.p = event;
-
-}
-
-// filtrarFogo(){
-//   this.pokemonsFogo = this.pokemons.filter((filtro:any) =>
-//   this.pokemons.genre)
-// }
-
-favoritar(name:any){
-  console.log(this.favoritos)
-}
-
-}
-

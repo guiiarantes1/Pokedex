@@ -1,1 +1,46 @@
-<p>favoritos works!</p>
+<div>
+  <button (click)="removerFavoritos()">Remover todos favoritos</button>
+</div>
+<div class="listaCards">
+  <div
+    class="card"
+    *ngFor="
+      let favorito of favoritos
+        | paginate
+          : {
+              itemsPerPage: 20,
+              currentPage: p,
+              totalItems: totalFavoritos
+            };
+      index as i
+    "
+  >
+    <div class="detalhes">
+      <div class="imagemPokemon">
+        <img [src]="pegarImagem(favorito.id)" />
+        <a ><mat-icon>favorite_border</mat-icon></a>
+      </div>
+
+      <p class="nomePokemon">{{ favorito.name | uppercase }}</p>
+      <p class="idPokemon">ID: #{{ favorito.id}}</p>
+    </div>
+    <div class="types" *ngFor="let type of favorito.types">
+      <div class="{{ type.type.name }}">
+        <span class="type">{{ type.type.name | titlecase }}</span>
+      </div>
+    </div>
+    <div class="verDetalhes">
+      <button class="botaoVer" (click)="openDialog(favorito.id -1)">
+        <p class="textButton">Ver Detalhes</p>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="pagination">
+  <pagination-controls
+    previousLabel=""
+    nextLabel=""
+    (pageChange)="changePage($event)"
+
+  ></pagination-controls>
+</div>
