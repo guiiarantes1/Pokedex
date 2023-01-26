@@ -23,13 +23,13 @@ pokemon!:any;
 
 
   pegarImagemFrente(index:any){
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index+1}.png`
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`
   }
   pegarImagemCostas(index:any){
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${index+1}.png`
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${index}.png`
   }
 
 
-  
-  
+
+
 }

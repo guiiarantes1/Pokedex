@@ -13,13 +13,13 @@ export class PokemonService {
   offset = 0;
 
   constructor(private httpClient: HttpClient,  public dialog:MatDialog) {
-    this.carregarPokemons();
+
    }
 
-  //  carregarPokemons(): Observable<any>{
-  //   return this.httpClient.get('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0');
+   getPokemons(): Observable<any>{
+    return this.httpClient.get('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0');
 
-  // }
+  }
 
   // pegarDetalhes(name:string): Observable<any>{
   //   return this.httpClient.get('https://pokeapi.co/api/v2/pokemon/${name}/');

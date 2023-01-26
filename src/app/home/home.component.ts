@@ -11,23 +11,25 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  selectedPokemon!:any;
   pokemons!: any[];
   teste!:any;
   p: number = 1;
-  nomePokemon:any;
-  detalhesPokemons!: any[];
+  pokemonsFogo!: any[];
+  favoritos!:any[];
+  listaPokemons!:any[]
 
 
   constructor(private router: Router, public pokemonService: PokemonService, private httpClient: HttpClient, public dialog:MatDialog) { }
 
 
   ngOnInit(): void {
-    // this.pokemonService.carregarPokemons().subscribe((response: any) => {
-    //   console.log(response);
-    //   this.pokemons = response.results;
+    this.pokemonService.carregarPokemons();
 
-    // });
+
+    this.pokemonService.getPokemons().subscribe((response: any) => {
+      console.log(response);
+      this.pokemons = response.results;
+    });
 
     // this.pokemonService.pegarDetalhes().subscribe((response: any) => {
     //   console.log(response);
@@ -37,7 +39,7 @@ export class HomeComponent implements OnInit {
   }
 
   pegarImagem(index:any){
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index+1}.png`
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`
   }
 
 public openDialog(index:any){
@@ -47,6 +49,15 @@ public openDialog(index:any){
 changePage(event: any) {
   this.p = event;
 
+}
+
+// filtrarFogo(){
+//   this.pokemonsFogo = this.pokemons.filter((filtro:any) =>
+//   this.pokemons.genre)
+// }
+
+favoritar(name:any){
+  console.log(this.favoritos)
 }
 
 }
