@@ -18,8 +18,6 @@ export class HomeComponent implements OnInit {
   favoritos!: any[];
   listaPokemons!: any[];
   pokemonsFavoritos!: any[];
-  favorito!:boolean;
-
   constructor(
     private router: Router,
     public pokemonService: PokemonService,
@@ -28,7 +26,7 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.favorito = false;
+
   // localStorage.clear()
     this.favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
     console.log(this.favoritos);
@@ -76,7 +74,7 @@ export class HomeComponent implements OnInit {
       this.favoritos.push(response);
       localStorage.setItem('favoritos', JSON.stringify(this.favoritos));
       this.pokemonsFavoritos = this.favoritos;
-      this.favorito = true;
+
       console.log(this.favoritos);
       console.log(nome);
 
@@ -84,7 +82,6 @@ export class HomeComponent implements OnInit {
         console.log(this.favoritos);
         this.favoritos = this.favoritos.filter(e => e !== nome);
         console.log(this.favoritos);
-        console.log(this.favorito);
     }
     });
 

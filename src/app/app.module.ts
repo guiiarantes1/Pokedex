@@ -22,6 +22,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { CommonModule } from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
     CommonModule,
     MatFormFieldModule,
     MatSelectModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatMenuModule
   ],
   providers: [PokemonService, HomeComponent],
   bootstrap: [AppComponent]

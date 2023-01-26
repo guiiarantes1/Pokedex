@@ -68,4 +68,35 @@
   mat-icon{
     margin-right: 10px;
   }
+  .menuResponsivo{
+  display: none !important;
+  }
 
+  @media (max-width:768px){
+    .menu{
+      display: none;
+    }
+    .exit{
+      display: none;
+    }
+    .logo{
+      width: 60% !important;
+    }
+
+    .menuResponsivo{
+      background-color: #ffcd058f !important;
+      display: flex !important;
+      background-color: transparent;
+      border: 1px;
+      border-style: solid;
+      border-radius: 5px;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      margin: auto 30px auto 0;
+    }
+    mat-icon{
+      margin: auto;
+    }
+  }
