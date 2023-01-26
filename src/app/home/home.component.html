@@ -28,11 +28,14 @@
         <div class="detalhes">
           <div class="imagemPokemon">
             <img [src]="pegarImagem(pokemon.id)" />
-            <a (click)="favoritar(pokemon.name)"><mat-icon>favorite_border</mat-icon></a>
+            <a (click)="favoritar(pokemon.name)"
+              ><mat-icon class="favorite" *ngIf="favoritos.includes(pokemon.id)">favorite</mat-icon>
+              <mat-icon class="noFavorite" *ngIf="!favoritos.includes(pokemon.name)">favorite_border</mat-icon></a
+            >
           </div>
 
           <p class="nomePokemon">{{ pokemon.name | uppercase }}</p>
-          <p class="idPokemon">ID: #{{ pokemon.id}}</p>
+          <p class="idPokemon">ID: #{{ pokemon.id }}</p>
         </div>
         <div class="types" *ngFor="let type of pokemon.types">
           <div class="{{ type.type.name }}">
@@ -40,7 +43,7 @@
           </div>
         </div>
         <div class="verDetalhes">
-          <button class="botaoVer" (click)="openDialog(pokemon.id -1)">
+          <button class="botaoVer" (click)="openDialog(pokemon.id - 1)">
             <p class="textButton">Ver Detalhes</p>
           </button>
         </div>
@@ -51,7 +54,6 @@
         previousLabel=""
         nextLabel=""
         (pageChange)="changePage($event)"
-
       ></pagination-controls>
     </div>
   </div>

@@ -8,12 +8,11 @@
   margin: auto;
 }
 
-.filterGroup{
+.filterGroup {
   display: flex;
   padding: 10px 0;
-
 }
-.filterItem > button{
+.filterItem > button {
   width: 90px;
   font-size: 1rem;
   text-align: center;
@@ -24,7 +23,6 @@
   border-radius: 30px;
   background-color: #ffffff;
 }
-
 
 .filterItem > button:hover {
   cursor: pointer;
@@ -129,30 +127,59 @@
   justify-content: center;
 }
 
-@media (min-width: 320px) and (max-width:1024px){
+.favorite {
+  color: red;
+}
+
+.noFavorite {
+  color: black;
+}
+
+@media (min-width: 476px) and (max-width: 1024px) {
   .contain {
     width: 95%;
     margin: auto;
   }
-  .filterItem{
+  .filterItem {
     display: flex;
     flex-wrap: wrap;
     justify-content: center !important;
     align-items: center !important;
-
   }
 
-.card {
-  width: 180px;
-  height: auto;
-  margin-bottom: 10px;
+  .card {
+    width: 180px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .type {
+    font-size: 0.9rem;
+  }
+  .textButton {
+    font-size: 1rem;
+    margin-top: 10px;
+    padding: 5px;
+  }
 }
-.type {
-  font-size: 0.9rem;
-}
-.textButton {
-  font-size: 1rem;
-  margin-top: 10px;
-  padding: 5px;
-}
+
+@media (min-width: 400px) and (max-width: 475px) {
+  .contain{
+    width: 100%;
+  }
+  .listaCards{
+    width: 95%;
+    margin: auto;
+  }
+  .card {
+    width: 145px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .types{
+    width: 60px;
+    margin: 10px 6px;
+  }
+  .verDetalhes{
+    margin-top: 10px;
+  }
 }
