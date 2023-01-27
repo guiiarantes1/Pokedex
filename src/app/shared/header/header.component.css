@@ -89,11 +89,12 @@
       display: flex;
       width: 100% !important;
       justify-content: space-between;
+      padding: 10px;
 
     }
 
     .logo >img{
-      width: 85px;
+      width: 120px;
 
     }
     .space{
