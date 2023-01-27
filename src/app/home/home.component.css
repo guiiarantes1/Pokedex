@@ -253,6 +253,10 @@
     height: auto;
     margin-bottom: 10px;
   }
+  .imagemPokemon > a {
+    position: absolute;
+    margin: -75px 0 0 95px ;
+  }
   .types{
     width: 55px;
     margin: 10px 4px;
