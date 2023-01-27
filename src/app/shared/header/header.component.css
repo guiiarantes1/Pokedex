@@ -71,6 +71,9 @@
   .menuResponsivo{
   display: none !important;
   }
+  .space{
+    display: none !important;
+  }
 
   @media (max-width:768px){
     .menu{
@@ -79,10 +82,25 @@
     .exit{
       display: none;
     }
+    .header{
+      justify-content: end;
+    }
     .logo{
-      width: 40% !important;
+      display: flex;
+      width: 100% !important;
+      justify-content: space-between;
 
+    }
 
+    .logo >img{
+      width: 85px;
+
+    }
+    .space{
+      display: flex !important;
+      color: #00000000;
+      width: 40px;
+      margin: auto 0 auto 30px;
     }
 
     .menuResponsivo{
@@ -102,3 +120,4 @@
       margin: auto;
     }
   }
+

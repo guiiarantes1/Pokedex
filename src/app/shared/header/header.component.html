@@ -1,10 +1,42 @@
 <div class="header">
+
   <div class="logo">
+    <div class="space">
+      a
+    </div>
     <img
       class="logoPokemon"
       src="../../assets/images/logo2.svg"
       alt="LogoPokemon"
     />
+    <button
+    class="menuResponsivo"
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>home</mat-icon>
+      <span routerLink="/home">Home </span>
+    </button>
+
+    <button mat-menu-item>
+      <mat-icon>favorite</mat-icon>
+      <span routerLink="/favoritos">Favoritos </span>
+    </button>
+
+    <button mat-menu-item>
+      <mat-icon>search</mat-icon>
+      <span routerLink="/pesquisar">Pesquisar</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>input</mat-icon>
+      <span routerLink="">Sair</span>
+    </button>
+  </mat-menu>
   </div>
   <div class="menu">
     <a routerLink="/home">Ver Todos</a>
@@ -19,32 +51,5 @@
 
 
   </div>
-  <button
-      class="menuResponsivo"
-      mat-icon-button
-      [matMenuTriggerFor]="menu"
 
-    >
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>
-        <mat-icon>home</mat-icon>
-        <span routerLink="/home">Home </span>
-      </button>
-
-      <button mat-menu-item>
-        <mat-icon>favorite</mat-icon>
-        <span routerLink="/favoritos">Favoritos </span>
-      </button>
-
-      <button mat-menu-item>
-        <mat-icon>search</mat-icon>
-        <span routerLink="/pesquisar">Pesquisar</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>input</mat-icon>
-        <span routerLink="">Sair</span>
-      </button>
-    </mat-menu>
 </div>
