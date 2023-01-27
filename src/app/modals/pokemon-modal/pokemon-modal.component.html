@@ -12,10 +12,10 @@
             <img src={{pokemon.sprites.back_default}}>
         </div>
         <div class="caracteristicas">
-            <p>{{pokemon.height}}m</p>
-            <p>{{pokemon.weight}}Kg</p>
+            <p>{{pokemon.height / 10}}m</p>
+            <p>{{pokemon.weight / 10}}Kg</p>
         </div>
-    
+
     </div>
     <div class="types" *ngFor="let type of pokemon.types;" >
         <div class={{type.type.name}}    >
@@ -25,13 +25,13 @@
 
     <div class="estatisticas">
         <p class="headerEstatisticas">Estátisticas</p>
-        <div class="backgroundEstatisticas">       
+        <div class="backgroundEstatisticas">
         <div class="atributos"*ngFor="let stat of pokemon.stats;" >
            <p class="nomeAtributo">{{stat.stat.name | uppercase}}</p>
            <mat-progress-bar class="progressBar" mode="determinate" value={{stat.base_stat}}></mat-progress-bar>
            <p class="valorAtributo">{{stat.base_stat}}</p>
         </div>
-           
+
         </div>
     </div>
 
