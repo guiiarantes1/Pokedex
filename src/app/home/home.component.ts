@@ -61,29 +61,21 @@ export class HomeComponent implements OnInit {
   // }
 
   favoritar(nome: any) {
-    // this.favoritos.push(nome)
-
-    // Pega a lista já cadastrada, se não houver vira um array vazio
     this.favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
-    // Adiciona pessoa ao cadastro
-    //this.favoritos.push(nome);
 
-    // Salva a lista alterada
-    // localStorage.setItem("favoritos", JSON.stringify(this.favoritos));
     this.pokemonService.getDetails(nome).subscribe((response: any) => {
-      this.favoritos.push(response);
+      //verificar se o objeto já existe no array
+      if(this.favoritos.find(favorito => favorito.name === response.name)){
+        //se já existir, remover o objeto
+        this.favoritos = this.favoritos.filter(favorito => favorito.name !== response.name);
+      }else{
+        //se não existir, adicionar o objeto
+        this.favoritos.push(response);
+      }
       localStorage.setItem('favoritos', JSON.stringify(this.favoritos));
-      this.pokemonsFavoritos = this.favoritos;
+      console.log(this.favoritos)
 
-
-
-      if (this.favoritos.includes(nome)) {
-
-        this.favoritos = this.favoritos.filter(e => e !== nome);
-
-    }
     });
-
   }
 
   pokemonsForType(name:string){
