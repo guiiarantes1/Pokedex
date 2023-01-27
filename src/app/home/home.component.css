@@ -64,6 +64,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column-reverse;
+}
+.imagemPokemon > a {
+  position: absolute;
+  margin: -75px 0 0 145px ;
 }
 
 .detalhes {
@@ -175,7 +180,7 @@
   }
 }
 
-@media (min-width: 320px) and (max-width: 475px) {
+@media (min-width: 400px) and (max-width: 475px) {
   .filterGroup{
     display: flex;
     flex-wrap: wrap;
@@ -186,6 +191,11 @@
   }
   .filterItem{
 
+  }
+
+  .imagemPokemon > a {
+    position: absolute;
+    margin: -75px 0 0 95px ;
   }
 
   .filterItem >button{
@@ -211,4 +221,52 @@
   .verDetalhes{
     margin-top: 10px;
   }
+}
+
+@media(max-width: 399px) {
+
+  .filterGroup{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 90%;
+    margin: auto;
+  }
+  .filterItem{
+
+  }
+
+  .filterItem >button{
+    margin: 3px;
+
+  }
+  .contain{
+    width: 100%;
+  }
+  .listaCards{
+    width: 95%;
+    margin: auto;
+  }
+  .card {
+    width: 130px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .types{
+    width: 55px;
+    margin: 10px 4px;
+  }
+  .verDetalhes{
+    margin-top: 2px;
+  }
+
+  .botaoVer{
+    width: 120px;
+  }
+
+.botaoVer >p {
+  padding: 0;
+  font-size: 0.75rem;
+}
 }
