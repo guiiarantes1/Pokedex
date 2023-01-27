@@ -1,3 +1,6 @@
+.cdk-overlay-pane{
+  border-radius: 20px !important;
+}
 .contain {
   height: 650px;
   width: 300px;
@@ -54,7 +57,7 @@
   width: 85px;
   border-radius: 7px;
   margin-top: 15px;
-  
+
 
 }
 .type{
@@ -104,3 +107,185 @@
 
 
 .valorAtributo {}
+
+@media (min-width:390px) and (max-width:768px){
+  .cdk-overlay-0{
+    border-radius: 20px !important;
+  }
+  .contain {
+    height: 500px;
+    width: 230px;
+    overflow-y: hidden;
+  }
+
+  .card {
+
+    height: 490px;
+    width: 230px;
+  }
+
+.detalhes {}
+
+.nomePokemon {
+
+  font-size: 18px;
+
+}
+
+.imagemPokemon > img {
+width: 80px;
+
+}
+
+.caracteristicas>p {
+  margin: 10px 10px 0 2px ;
+  font-size: 16px;
+}
+
+.types {
+  width: 85px;
+  margin-top: 10px;
+
+}
+.type{
+ font-size: 12px;
+ margin-top: 2px;
+}
+
+.headerEstatisticas {
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #858585;
+}
+
+/* .estatisticas{
+  display: flex;
+  justify-content: space-between;
+} */
+.backgroundEstatisticas {
+  padding: 10px;
+  background-color: #ffcd0570;
+  border-radius: 20px;
+}
+
+.atributos {
+  padding: 2px;
+  width: 200px;
+  font-size: 13px;
+  justify-content: space-between;
+}
+
+.nomeAtributo{
+  width: 26%;
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+.progressBar {
+  width: 90px;
+  height: 8px;
+  border-radius: 15px;
+  color: #FFCB05 !important;
+}
+.valorAtributo{
+  margin-bottom: 3px;
+}
+
+
+}
+
+
+
+@media (min-width:320px) and (max-width:389px){
+  mat-dialog-container{
+    padding: 0 !;
+  }
+  .cdk-overlay-0{
+    border-radius: 20px !important;
+  }
+  .contain {
+    height: 500px;
+    width: 174px;
+    overflow-y: hidden;
+    padding: 5px;
+  }
+
+  .card {
+    height: 490px;
+    width: 100%;
+
+  }
+
+  .header > h4 {
+    font-size: 14px;
+    margin: 10px 0 10px 0;
+  }
+.detalhes {}
+
+.nomePokemon {
+  font-size: 16px;
+
+}
+
+.imagemPokemon > img {
+width: 65px;
+}
+
+.caracteristicas>p {
+  margin: 10px 10px 0 2px ;
+  font-size: 14px;
+}
+
+.types {
+  width: 60px;
+  margin-top: 10px;
+
+}
+.type{
+ font-size: 12px;
+ margin-top: 2px;
+}
+
+.headerEstatisticas {
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #858585;
+}
+
+/* .estatisticas{
+  display: flex;
+  justify-content: space-between;
+} */
+.backgroundEstatisticas {
+  padding: 10px;
+  background-color: #ffcd0570;
+  border-radius: 20px;
+}
+
+.atributos {
+  padding: 2px;
+  width: 100%;
+  font-size: 13px;
+  justify-content: space-between;
+}
+
+.nomeAtributo{
+  width: 28%;
+  font-size: 10px;
+  margin-bottom: 3px;
+}
+.progressBar {
+  width: 70px;
+  height: 8px;
+  border-radius: 15px;
+  color: #FFCB05 !important;
+}
+.valorAtributo{
+  font-size: 10px;
+  margin-bottom: 3px;
+}
+
+
+}
+
