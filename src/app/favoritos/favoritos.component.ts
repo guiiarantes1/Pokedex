@@ -28,7 +28,23 @@ export class FavoritosComponent implements OnInit {
     // });
   }
 
+  favoritar(nome: any) {
+    this.favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
 
+    // this.pokemonService.getDetails(nome).subscribe((response: any) => {
+    //   //verificar se o objeto já existe no array
+    //   if(this.favoritos.find(favorito => favorito.name === response.name)){
+    //     //se já existir, remover o objeto
+    //     this.favoritos = this.favoritos.filter(favorito => favorito.name !== response.name);
+    //   }else{
+    //     //se não existir, adicionar o objeto
+    //     this.favoritos.push(response);
+    //   }
+    //   localStorage.setItem('favoritos', JSON.stringify(this.favoritos));
+    //   console.log(this.favoritos)
+
+    // });
+  }
 
   pegarImagem(index: any) {
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`;

@@ -27,7 +27,7 @@ export class PokemonService {
 
   async carregarPokemons() {
    const requisicao = await this.httpClient
-   .get<any>('https://pokeapi.co/api/v2/pokemon?limit=151&offset=' + this.offset)
+   .get<any>('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=' + this.offset)
    .toPromise();
    const nomePokemons = requisicao.results.map((pokemon:any) => pokemon.name);
    const resultado = await Promise.all(nomePokemons.map((nomePokemon:string) => this.pegarDetalhes(nomePokemon)))

@@ -18,7 +18,7 @@
     <div class="detalhes">
       <div class="imagemPokemon">
         <img [src]="pegarImagem(favorito.id)" />
-        <a ><mat-icon>favorite_border</mat-icon></a>
+        <a (click)="favoritar(favorito.nome)"><mat-icon>favorite_border</mat-icon></a>
       </div>
 
       <p class="nomePokemon">{{ favorito.name | uppercase }}</p>

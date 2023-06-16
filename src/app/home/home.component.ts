@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
 ;
     this.pokemonService.carregarPokemons();
 
+
     this.pokemonService.getPokemons().subscribe((response: any) => {
       console.log(response);
       this.pokemons = response.results;
@@ -81,7 +82,6 @@ export class HomeComponent implements OnInit {
   pokemonsForType(name:string){
     this.pokemonService.getPokemonForType(name).subscribe((response:any) =>
     console.log(response.pokemon)
-
     );
 
 

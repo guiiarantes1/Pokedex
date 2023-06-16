@@ -20,14 +20,14 @@
               : {
                   itemsPerPage: 20,
                   currentPage: p,
-                  totalItems: 151
+                  totalItems: 1281
                 };
           index as i
         "
       >
         <div class="detalhes">
           <div class="imagemPokemon">
-            <img [src]="pegarImagem(pokemon.id)" />
+            <img [src]="pegarImagem(pokemon.id)" onerror="this.src='./assets/images/pokemon-desconhecido.png';"/>
             <a (click)="favoritar(pokemon.name)"
               ><mat-icon class="favorite" *ngIf="favoritos.includes(pokemon.id)">favorite</mat-icon>
               <mat-icon class="noFavorite" *ngIf="!favoritos.includes(pokemon.name)">favorite_border</mat-icon></a
